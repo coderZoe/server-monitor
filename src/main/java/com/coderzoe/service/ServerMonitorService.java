@@ -1,6 +1,8 @@
 package com.coderzoe.service;
 
 import com.coderzoe.model.*;
+import com.coderzoe.util.JsonUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import oshi.SystemInfo;
 import oshi.hardware.*;
@@ -17,17 +19,20 @@ import java.util.stream.Collectors;
  * @date 2023/8/13 20:48
  */
 @Service
+@Slf4j
 public class ServerMonitorService {
 
     public ServerInfo getServerInfo(){
         SystemInfo systemInfo = new SystemInfo();
-        return ServerInfo.builder()
+        ServerInfo serverInfo = ServerInfo.builder()
                 .osInfo(getOsInfo(systemInfo))
                 .cpuInfo(getCpuInfo(systemInfo))
                 .memoryInfo(getMemoryInfo(systemInfo))
                 .diskInfo(getDiskInfo(systemInfo))
                 .batteryInfo(getBatteryInfo(systemInfo))
                 .build();
+        log.info("生成监控信息：{}", JsonUtil.parseToJson(serverInfo));
+        return serverInfo;
     }
 
 

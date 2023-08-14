@@ -3,5 +3,12 @@ server:
 spring:
   mail:
     host: smtp.qq.com
-    username: xxx.qq.com
-    password: xxx
+    username: xxx.@qq.com
+    password: your authorization code
+    to-email: xxx.@qq.com,yyy.@qq.com
+threshold:
+  cpu-temperature: 90
+  disk-available-percent: 0.2
+logging:
+  file:
+    path: /app/log
