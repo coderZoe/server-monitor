@@ -7,16 +7,16 @@ import lombok.Data;
  * @date 2023/8/13 21:55
  */
 @Data
-public class CommonReturn<T>{
+public class CommonReturn<T> {
     public Boolean success;
     private String message;
     private T result;
 
-    public static<T> CommonReturn<T> success(T result){
+    public static <T> CommonReturn<T> success(T result) {
         return new CommonReturn<T>(result);
     }
 
-    public static<T> CommonReturn<T> fail(String failReason){
+    public static <T> CommonReturn<T> fail(String failReason) {
         return new CommonReturn<>(failReason);
     }
 

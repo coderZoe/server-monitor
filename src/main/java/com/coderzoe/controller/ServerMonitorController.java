@@ -17,7 +17,7 @@ public class ServerMonitorController {
 
 
     @GetMapping("/server")
-    public CommonReturn<ServerInfo> getServerInfo(){
+    public CommonReturn<ServerInfo> getServerInfo() {
         return CommonReturn.success(serverMonitorService.getServerInfo());
     }
 

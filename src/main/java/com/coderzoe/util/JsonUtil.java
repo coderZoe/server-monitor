@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class JsonUtil<T> {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-    public static<T> String parseToJson(T obj){
+    public static <T> String parseToJson(T obj) {
         try {
             return OBJECT_MAPPER.writeValueAsString(obj);
         } catch (JsonProcessingException e) {

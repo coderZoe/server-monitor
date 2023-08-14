@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
  * 全局异常拦截
+ *
  * @author coderZoe
  * @date 2023/8/13 22:00
  */
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public CommonReturn<?> handle(Exception exception){
+    public CommonReturn<?> handle(Exception exception) {
         return CommonReturn.fail(exception.getMessage());
     }
 }

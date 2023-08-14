@@ -20,7 +20,7 @@ public class DiskInfo {
      */
     @Data
     @Builder
-    public static class Partition{
+    public static class Partition {
         /**
          * 分区名
          */
