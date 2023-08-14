@@ -1,2 +1,7 @@
 server:
   port: 8081
+spring:
+  mail:
+    host: smtp.qq.com
+    username: xxx.qq.com
+    password: xxx
